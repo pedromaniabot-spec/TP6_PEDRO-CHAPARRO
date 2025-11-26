@@ -3,33 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Básica</title>
-    <link rel="stylesheet" href="static/estilos.css">
+    <title>Integración Multimedia</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .contenedor {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: auto;
+            box-shadow: 0 0 10px #0003;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        iframe {
+            width: 100%;
+            border-radius: 10px;
+        }
+        canvas {
+            border: 2px solid #333;
+            border-radius: 6px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Bienvenido a mi página web</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="pagina1.html">PAGINA 1</a>
-            <a href="pagina2.html">PAGINA 2</a>
-        </nav>
-    </header>
+<div class="contenedor">
+    <h1>Ejemplo de Integración Multimedia</h1>
 
-    <main>
-        <section>
-            <h2>Sección principal</h2>
-            <p>Este es un párrafo de ejemplo. Aquí puedes escribir cualquier contenido.</p>
-        </section>
+    <!-- 1. IMAGEN -->
+    <section>
+        <h2>1. Imagen WebP</h2>
+        <img src="https://www.gstatic.com/webp/gallery3/1_webp_ll.webp" 
+             alt="Ejemplo WebP" width="400">
+    </section>
 
-        <article>
-            <h3>Artículo destacado</h3>
-            <p>Este es un artículo de muestra con texto de ejemplo para ver el estilo.</p>
-        </article>
-    </main>
+    <!-- 2. AUDIO -->
+    <section>
+        <h2>2. Audio en MP3</h2>
+        <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" 
+                    type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+    </section>
 
+    <!-- 3. VIDEO -->
+    <section>
+        <h2>3. Video desde archivo local (MP4)</h2>
+        <video width="500" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" 
+                    type="video/mp4">
+            Tu navegador no soporta video.
+        </video>
 
+        <h3>Video embebido de YouTube</h3>
+        <iframe height="315"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                allowfullscreen>
+                
+        </iframe>
+    </section>
+
+    <!-- 4. CANVAS -->
+    <section>
+        <h2>4. Canvas con dibujo</h2>
+        <canvas id="miCanvas" width="400" height="200"></canvas>
+
+        <script>
+            const canvas = document.getElementById("miCanvas");
+            const ctx = canvas.getContext("2d");
+
+            // Fondo
+            ctx.fillStyle = "#3498db";
+            ctx.fillRect(0, 0, 400, 200);
+
+            // Círculo
+            ctx.beginPath();
+            ctx.arc(200, 100, 60, 0, Math.PI * 2);
+            ctx.fillStyle = "#ffcc00";
+            ctx.fill();
+
+            // Texto
+            ctx.fillStyle = "#000";
+            ctx.font = "20px Arial";
+            ctx.fillText("Canvas en acción", 125, 190);
+        </script>
+    </section>
+
+</div>
 
 </body>
 </html>
+

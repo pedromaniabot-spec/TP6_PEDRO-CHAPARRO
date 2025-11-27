@@ -3,106 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integración Multimedia</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-        }
-        .contenedor {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 900px;
-            margin: auto;
-            box-shadow: 0 0 10px #0003;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        iframe {
-            width: 100%;
-            border-radius: 10px;
-        }
-        canvas {
-            border: 2px solid #333;
-            border-radius: 6px;
-        }
-    </style>
+    <title>Inicio - Proyecto Like</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
-
 <body>
 
-<div class="contenedor">
-    <h1>Ejemplo de Integración Multimedia</h1>
+<header>
+    <h1>Mi Red Social</h1>
 
-    <!-- 1. IMAGEN -->
-    <section>
-        <h2>1. Imagen WebP</h2>
-        <img src="https://www.gstatic.com/webp/gallery3/1_webp_ll.webp" 
-             alt="Ejemplo WebP" width="400">
-    </section>
+    <nav class="menu">
+        <button class="menu-btn">☰ Menú</button>
+        <ul class="menu-options">
+            <li><a href="social_media.html">Multimedia</a></li>
+            <li><a href="social_comentario.html">Comentarios</a></li>
+            <li><a href="social_noticias.html">Noticias</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- 2. AUDIO -->
-    <section>
-        <h2>2. Audio en MP3</h2>
-        <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" 
-                    type="audio/mpeg">
-            Tu navegador no soporta audio.
-        </audio>
-    </section>
+<section class="contenido-centro">
+    <h2>Bienvenido a mi mini red social</h2>
+    <p>Usa el menú para navegar entre las secciones.</p>
+</section>
 
-    <!-- 3. VIDEO -->
-    <section>
-        <h2>3. Video desde archivo local (MP4)</h2>
-        <video width="500" controls>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" 
-                    type="video/mp4">
-            Tu navegador no soporta video.
-        </video>
-
-        <h3>Video embebido de YouTube</h3>
-        <iframe height="315"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                allowfullscreen>
-                
-        </iframe>
-    </section>
-
-    <!-- 4. CANVAS -->
-    <section>
-        <h2>4. Canvas con dibujo</h2>
-        <canvas id="miCanvas" width="400" height="200"></canvas>
-
-        <script>
-            const canvas = document.getElementById("miCanvas");
-            const ctx = canvas.getContext("2d");
-
-            // Fondo
-            ctx.fillStyle = "#3498db";
-            ctx.fillRect(0, 0, 400, 200);
-
-            // Círculo
-            ctx.beginPath();
-            ctx.arc(200, 100, 60, 0, Math.PI * 2);
-            ctx.fillStyle = "#ffcc00";
-            ctx.fill();
-
-            // Texto
-            ctx.fillStyle = "#000";
-            ctx.font = "20px Arial";
-            ctx.fillText("Canvas en acción", 125, 190);
-        </script>
-    </section>
-
-</div>
+<script src="js/script.js"></script>
+</body>
+</html>
 
 </body>
 </html>
+
 
